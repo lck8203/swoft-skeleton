@@ -1,0 +1,9 @@
+{
+    "name": "lck/swoft",
+    "description": "Swoft skeleton application, PHP 8.4 ready maintained fork",
+    "type": "project",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=7.4"
+    }
+}
