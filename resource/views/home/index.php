@@ -220,7 +220,7 @@
     <ul>
       <li><a target="_blank" href="https://packagist.org/packages/lck/swoft">Packagist</a></li>
       <li><a target="_blank" href="https://gitee.com/lck8203/swoft-skeleton">Gitee 仓库</a></li>
-      <li><a target="_blank" href="#TODO_HOME_URL">官网</a></li>
+      <li><a target="_blank" href="https://www.lck.yn.cn/swoft">官网</a></li>
     </ul>
   </nav>
 
