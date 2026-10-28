@@ -29,15 +29,13 @@ class ViewController
     /**
      * @RequestMapping("index")
      *
-     * @param Response $response
-     *
-     * @return Response
+     * @return array
      */
-    public function index(Response $response): Response
+    public function index(): array
     {
-        $response = $response->withContent('<html lang="en"><h1>Swoft framework</h1></html>');
-        $response = $response->withContentType(ContentType::HTML);
-        return $response;
+        return [
+            'msg' => 'hello'
+        ];
     }
 
     /**
