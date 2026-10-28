@@ -13,7 +13,7 @@ Swoft 2.0.x 骨架应用（PHP 8.4 兼容维护版）。
 ## 环境要求
 
 - PHP >= 7.4（已验证 7.4 与 8.4）
-- Swoole 扩展 >= 4.4（PHP 8.4 环境建议 5.x）
+- Swoole 扩展 >= 4.4（PHP 8.4 下 5.x 或 6.x 均可）
 - ext-pdo、ext-redis、ext-json、ext-simplexml、ext-libxml、ext-mbstring
 
 ## 安装
@@ -71,8 +71,8 @@ php bin/swoft tcp:start       # TCP
 - `Serializable` 接口改为 `__serialize` / `__unserialize`
 - `ArrayAccess` 等内部接口补 `#[\ReturnTypeWillChange]`
 - `symfony/yaml`、`symfony/expression-language` 升到 5.4（避开 4.x 安全公告）
-- `firebase/php-jwt` 升到 7.2（`Key` 对象写法，新旧 token 双向兼容）
-- `vlucas/phpdotenv` 升到 3.6.11
+- `lck/php-jwt ^7.2.3`（`firebase/php-jwt` fork，移除 HMAC 最小长度强制校验以保持与 v5 行为一致）
+- `lck/phpdotenv ^3.6.12`（`vlucas/phpdotenv` fork，含 PHP 8.4 隐式 nullable 补丁）
 
 ## 与官方版的差异
 
