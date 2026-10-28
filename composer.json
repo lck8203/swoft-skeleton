@@ -60,6 +60,9 @@
   "scripts": {
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php -r \"if (is_dir('.git')) { echo 'Removing VCS history...', PHP_EOL; shell_exec('rm -rf .git 2>NUL || rm -rf .git'); }\""
     ]
   }
 }
