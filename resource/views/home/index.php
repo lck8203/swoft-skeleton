@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Swoft Framework 2.0 - PHP microservices coroutine framework</title>
+  <title>lck/swoft 2.0.13 · PHP 8.4 Ready</title>
   <style type="text/css">
     *,
     *::before,
@@ -32,11 +32,11 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
       font-size: 1rem;
       font-weight: 400;
-      line-height: 1.5;
-      color: #212529;
+      line-height: 1.6;
+      color: #333;
       text-align: left;
       background-color: #fefefe;
     }
@@ -114,136 +114,101 @@
       font-size: 1rem;
     }
 
-    hr {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      border: 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .clearfix:after, .clearfix:before {
-      content: " ";
-      display: table
-    }
-
-    .clearfix:after {
-      clear: both
-    }
-
-    code,
-    kbd,
-    pre,
-    samp {
-      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    }
-
-    pre {
-      display: block;
-      font-size: 87.5%;
-      color: #212529;
-    }
-
-    pre code {
-      font-size: inherit;
-      color: inherit;
-      word-break: normal;
-    }
-
-    .pre-scrollable {
-      max-height: 340px;
-      overflow-y: scroll;
-    }
-
-    code {
-      font-size: 87.5%;
-      color: #e83e8c;
-      word-break: break-word;
-    }
-
-    a {
-      color: #777;
-    }
-
-    a:hover {
-      color: #18bc9c;
-    }
-
-    a > code {
-      color: inherit;
-    }
-
-    .swoft-title {
-      margin-top: 23%;
-      text-align: center;
-      color: #18bc9c;
-      opacity: 0.7;
-      font: 7em 'Helvetica Neue';
-      font-weight: 200;
-      -webkit-box-reflect: below 3px linear-gradient(transparent, transparent 30%, rgba(0, 0, 0, .4));
-    }
-
     ul, li {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .top-nav {
-      margin-top: 3rem;
-    }
-
-    .top-nav li, .foot-nav li {
-      width: 25%;
-      float: left;
-    }
-
-    .top-nav a, .foot-nav a {
-      text-align: center;
-      display: block;
-      font-size: 2em;
-      font-weight: 200;
+    a {
+      color: #18bc9c;
       text-decoration: none;
     }
 
-    .foot-nav {
-      position: absolute;
-      bottom: 5em;
-      width: 100%;
+    a:hover {
+      color: #128770;
+      text-decoration: underline;
     }
 
-    .foot-nav a {
-      color: #ccc;
+    .swoft-title {
+      margin-top: 15%;
+      text-align: center;
+      color: #18bc9c;
+      font: 6em 'Helvetica Neue';
+      font-weight: 200;
+    }
+
+    .swoft-title small {
+      font-size: 0.35em;
+      color: #999;
+      margin-left: 0.3em;
+      font-weight: 400;
+    }
+
+    .top-nav {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .top-nav ul {
+      display: inline-flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 0;
+    }
+
+    .top-nav a {
+      display: inline-block;
+      font-size: 1.2em;
+      font-weight: 300;
+      padding: 0.4em 0.6em;
+    }
+
+    .desc {
+      margin-top: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 780px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .desc p {
+      margin: 0.8rem 0;
+    }
+
+    .desc strong {
+      color: #333;
     }
 
     @media (max-width: 1199px) {
       .swoft-title {
-        font-size: 6em;
-      }
-
-      .top-nav a, .foot-nav a {
-        font-size: 1.5em;
+        font-size: 5em;
+        margin-top: 12%;
       }
     }
 
     @media (max-width: 991px) {
       .swoft-title {
-        font-size: 5em;
-        margin-top: 30%;
-      }
-
-      .top-nav a, .foot-nav a {
-        font-size: 1.3em;
+        font-size: 4em;
+        margin-top: 10%;
       }
     }
 
     @media (max-width: 767px) {
       .swoft-title {
-        font-size: 4em;
-        margin-top: 30%;
+        font-size: 3em;
+        margin-top: 8%;
       }
 
-      .swoft-title .framework {
-        display: none;
+      .top-nav ul {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .desc {
+        font-size: 0.88rem;
       }
     }
 
@@ -251,27 +216,31 @@
 </head>
 <body>
 <div class="container">
-  <nav class="top-nav ">
-    <ul class="clearfix">
-      <li><a target="_blank"  href="https://github.com/swoft-cloud/swoft">Github</a></li>
-      <li><a target="_blank"  href="https://swoft.org/docs">Document</a></li>
-      <li><a target="_blank"  href="https://swoft.org/docs">Swoft.org</a></li>
-      <li><a target="_blank"  href="https://gitter.im/swoft-cloud/community">Gitter.im</a></li>
+  <nav class="top-nav">
+    <ul>
+      <li><a target="_blank" href="https://packagist.org/packages/lck/swoft">Packagist</a></li>
+      <li><a target="_blank" href="https://gitee.com/lck8203/swoft-skeleton">Gitee 仓库</a></li>
+      <li><a target="_blank" href="#TODO_HOME_URL">官网</a></li>
     </ul>
   </nav>
+
   <div class="main">
-    <h1 class="swoft-title">Swoft <span class="framework">Framework</span>
-      <small>2.x</small>
-    </h1>
+    <h1 class="swoft-title">lck/swoft<small>2.0.13 · PHP 8.4 Ready</small></h1>
+  </div>
+
+  <div class="desc">
+    <p>
+      本项目是 <strong>swoft-cloud/swoft</strong> 的长期维护分支。官方 2.0.x 已停止维护，在 PHP 8.0+
+      环境下存在多处致命兼容问题。我们在官方基线之上补齐 PHP 8.4 兼容补丁，并以
+      <strong>lck/swoft-*</strong> 名义重新发布全部组件包。
+    </p>
+    <p>
+      <strong>命名空间与用法完全不变</strong>：代码里仍然是
+      <code>use Swoft\Http\Server\...</code>、<code>use Swoft\Db\...</code>，业务代码无需任何修改。
+      改变的只有 Composer 包名（<code>swoft/*</code> → <code>lck/swoft-*</code>），
+      原因是官方包源已无人维护、且无法容纳 PHP 8.4 修复。
+    </p>
   </div>
 </div>
-<nav class="foot-nav">
-  <ul class="clearfix">
-    <li><a target="_blank"  href="https://github.com/swoft-cloud/swoft">Github</a></li>
-    <li><a target="_blank"  href="https://swoft.org/docs">Document</a></li>
-    <li><a target="_blank"  href="https://swoft.org/docs">Swoft.org</a></li>
-    <li><a target="_blank"  href="https://gitter.im/swoft-cloud/community">Gitter.im</a></li>
-  </ul>
-</nav>
 </body>
 </html>
